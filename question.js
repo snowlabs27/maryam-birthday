@@ -2,9 +2,9 @@ const questionMessage = document.querySelector("#question-message");
 const noButton = document.querySelector("#no-button");
 
 const noMessages = [
-  "I think you do",
-  "I'm going to cry!!!",
-  "Well now you don't have a choice",
+  "I think you do 😏",
+  "I'm going to cry 😢!!!",
+  "Well now you don't have a choice 😠💖",
 ];
 
 let noClickCount = 0;
