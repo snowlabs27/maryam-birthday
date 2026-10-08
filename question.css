@@ -1,0 +1,195 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap");
+
+:root {
+  color-scheme: dark;
+  font-family: "DM Sans", sans-serif;
+  color: #f6e9eb;
+  background: #090709;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  min-height: 100svh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(ellipse at 18% 10%, rgb(126 15 39 / 35%), transparent 38%),
+    radial-gradient(ellipse at 85% 92%, rgb(75 8 24 / 34%), transparent 38%),
+    #090709;
+}
+
+.question-card {
+  width: min(100%, 520px);
+  padding: 52px 36px 36px;
+  text-align: center;
+  background: rgb(19 13 16 / 94%);
+  border: 1px solid rgb(239 53 82 / 25%);
+  border-radius: 28px;
+  box-shadow:
+    0 24px 80px rgb(0 0 0 / 55%),
+    0 0 70px rgb(139 12 42 / 14%),
+    inset 0 1px rgb(255 255 255 / 3%);
+  animation: card-arrive 700ms ease-out both;
+}
+
+.heart {
+  margin-bottom: 16px;
+  color: #f0445f;
+  font-size: 2rem;
+  text-shadow: 0 0 28px rgb(240 68 95 / 48%);
+  animation: heartbeat 1.8s ease-in-out infinite;
+}
+
+.eyebrow {
+  margin: 0 0 16px;
+  color: #eb7787;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+h1 {
+  min-height: 2.4em;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  color: #fff3f4;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(2rem, 7vw, 3rem);
+  font-weight: 600;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.actions {
+  min-height: 52px;
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+}
+
+.button {
+  min-width: 112px;
+  padding: 13px 23px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+.button:focus-visible {
+  outline: 3px solid #fff3f4;
+  outline-offset: 4px;
+}
+
+.button-yes {
+  color: #fff8f8;
+  background: linear-gradient(135deg, #ed3f5a, #ae1236);
+  box-shadow: 0 8px 22px rgb(190 19 55 / 28%);
+}
+
+.button-yes:hover {
+  background: linear-gradient(135deg, #ff536b, #c31940);
+  box-shadow: 0 10px 26px rgb(190 19 55 / 40%);
+}
+
+.button-no {
+  color: #e6d7da;
+  background: #21171b;
+  border-color: #503039;
+}
+
+.button-no:hover {
+  background: #302026;
+  border-color: #934052;
+}
+
+.button-no[hidden] {
+  display: none;
+}
+
+.hint {
+  margin: 25px 0 0;
+  color: #b99ea4;
+  font-size: 0.85rem;
+}
+
+.hint span {
+  color: #ff526c;
+}
+
+@keyframes card-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  12% {
+    transform: scale(1.12);
+  }
+
+  24% {
+    transform: scale(1);
+  }
+
+  36% {
+    transform: scale(1.08);
+  }
+}
+
+@media (max-width: 480px) {
+  .question-card {
+    padding: 42px 24px 30px;
+    border-radius: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
